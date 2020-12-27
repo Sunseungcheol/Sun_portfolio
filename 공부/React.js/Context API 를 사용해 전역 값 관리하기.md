@@ -362,19 +362,12 @@ export default React.memo(UserList);
 
 ```javascript
 //App.js
-//App.js
-import React, {
-  useRef,
-  useState,
-  useMemo,
-  useCallback,
-  useReducer,
-  createContext,
-} from "react";
+import React, { useMemo, useReducer, createContext } from "react";
+import produce from "immer";
 import CreateUser from "./CreateUser";
-import useInputs from "./UseInputs";
 import UserList from "./UserList";
 
+window.produce = produce;
 function countActiveUsers(users) {
   console.log("활성 사용자 수를 세고 있습니다.");
   return users.filter((user) => user.active).length;
@@ -405,14 +398,6 @@ const initialState = {
 
 function reducer(state, action) {
   switch (action.type) {
-    case "CHANGE_INPUT":
-      return {
-        ...state,
-        inputs: {
-          ...state.inputs,
-          [action.name]: action.value,
-        },
-      };
     case "CREATE_USER":
       return {
         inputs: initialState.inputs,
