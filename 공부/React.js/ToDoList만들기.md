@@ -510,6 +510,100 @@ function TodoList() {
 
 `TodoItem.js` 에서는 `useTodoDispatch()` 를 사용해 onToggle 함수와 onRemove 함수를 만들어주면된다. 이때 마지막 부분에 `React.memo` 를 사용해주면 컴포넌트 최적화를 해줄 수 있다. 
 
+
+```javascript
+import React from "react";
+import styled, { css } from "styled-components";
+import { MdDone, MdDelete } from "react-icons/md";
+import { useTodoDispatch } from "../TodoContext";
+
+const Remove = styled.div`
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #dede2e;
+  font-size: 24px;
+  cursor: pointer;
+
+  ${(props) =>
+    props.done &&
+    css`
+      border: 1px solid #38d9ea;
+      color: #38d9a9;
+    `}
+
+  &:hover {
+    color: #ff6b6b;
+  }
+`;
+
+const CheckCircle = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #865487;
+  font-size: 24px;
+  color: #865487;
+`;
+const Text = styled.div`
+  flex: 1;
+  font-size: 21px;
+  color: #495057;
+  ${(props) =>
+    props.done &&
+    css`
+      color: #ced4da;
+    `}
+`;
+const TodoItemBLock = styled.div`
+  display: flex;
+  align-items: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  &:hover {
+    ${Remove} {
+      opacity: 1;
+    }
+  }
+`;
+
+function TodoItem({ id, done, text }) {
+  const dispatch = useTodoDispatch();
+  const onToggle = () =>
+    dispatch({
+      type: "TOGGLE",
+      id,
+    });
+  const onRemove = () => {
+    dispatch({
+      type: "REMOVE",
+      id,
+    });
+  };
+  return (
+    <TodoItemBLock>
+      <CheckCircle done={done} onClick={onToggle}>
+        {done && <MdDone></MdDone>}
+      </CheckCircle>
+      <Text done={done}>{text}</Text>
+      <Remove onClick={onRemove}>
+        <MdDelete></MdDelete>
+      </Remove>
+    </TodoItemBLock>
+  );
+}
+
+export default React.memo(TodoItem);
+
+```
+
 마지막으로 `TodoCreate.js` 도 같은 방식으로 해주면 되는데 이때 기존의 `InsertFrom` 를 div 에서 form 으로 바꿔준다. html 에서는 기본적으로 submit 이 되면 새로고침을 하게 되는데 이를 방지하기 위해 `preventDefault` 를 해주면 된다.
 
 ```javascript
