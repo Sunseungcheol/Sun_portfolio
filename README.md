@@ -18,12 +18,12 @@
 
 - 검색창에 검색어를 입력시 데이터에 입력되어 있는 예시 데이터를 보여줍니다.
 
-> [검색어 자동완성  깃헙 바로가기](https://github.com/Sunseungcheol/searchAutoComplete)
+> [검색어 자동완성 보러가기](https://search-auto-complete.web.app/)
+> [검색어 자동완성 깃헙 바로가기](https://github.com/Sunseungcheol/searchAutoComplete)
 
 - 프로필 사이트입니다. 퍼블리셔 재직 중 제작했던 페이지들이 있습니다.
- 
-> [프로필 사이트 바로가기](https://sunseungcheol.github.io/Sun_profile/)
 
+> [프로필 사이트 바로가기](https://sunseungcheol.github.io/Sun_profile/)
 
 ## 공부
 
