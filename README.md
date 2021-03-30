@@ -9,6 +9,7 @@
 - axios 와 firebase 를 이용해 댓글 게시판을 제작했습니다.
 
 > [댓글 게시판 보러가기](https://comment-board-sun.web.app/)
+
 > [댓글 작업 깃헙 바로가기](https://github.com/Sunseungcheol/commentBoard)
 
 - 리액트로 구현한 가계부입니다.
@@ -19,7 +20,8 @@
 
 - 검색창에 검색어를 입력시 데이터에 입력되어 있는 예시 데이터를 보여줍니다.
 
-> [검색어 자동완성 보러가기](https://search-auto-complete.web.app/) >
+> [검색어 자동완성 보러가기](https://search-auto-complete.web.app/)
+
 > [검색어 자동완성 깃헙 바로가기](https://github.com/Sunseungcheol/searchAutoComplete)
 
 - 프로필 사이트입니다. 퍼블리셔 재직 중 제작했던 페이지들이 있습니다.
