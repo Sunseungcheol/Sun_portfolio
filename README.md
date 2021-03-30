@@ -8,7 +8,7 @@
 
 - axios 와 firebase 를 이용해 댓글 게시판을 제작했습니다.
 
-> [댓글 게시판 보러가기](https://comment-board-sun.web.app/) >
+> [댓글 게시판 보러가기](https://comment-board-sun.web.app/)
 > [댓글 작업 깃헙 바로가기](https://github.com/Sunseungcheol/commentBoard)
 
 - 리액트로 구현한 가계부입니다.
